@@ -35,7 +35,7 @@ def start_convert(options):
         xls_file = XlsUtil(file_path)
 
         table = xls_file.get_table_by_index(0)
-        convert_android_file(table, target_path)
+        convert_file(table, target_path)
 
         print("Finished, see: " + target_path)
 
@@ -43,7 +43,7 @@ def start_convert(options):
         print().error("file path is None！use -h for help.")
 
 
-def convert_android_file(table, target_path):
+def convert_file(table, target_path):
     first_row = table.row_values(0)
 
     keys = table.col_values(0)
@@ -75,11 +75,14 @@ def write_to_file(keys, values, target_path, language_name):
         os.makedirs(target_path)
 
     print("reading language for: " + language_name + " to " + target_path + "/strings.xml")
+    print("reading language for: " + language_name + " to " + target_path + "/Localizable.strings")
 
-    fo = open(target_path + "/strings.xml", "a", encoding="utf8")
+    fo_for_android = open(target_path + "/strings.xml", "a", encoding="utf8")
+    fo_for_ios = open(target_path + "/Localizable.strings", "a", encoding="utf8")
 
     if language_name is not None:
-        fo.write(language_name + "\n")
+        fo_for_android.write(language_name + "\n")
+        fo_for_ios.write(language_name + "\n")
 
     for x in range(len(keys)):
         if values[x] is None or values[x] == '':
@@ -89,10 +92,16 @@ def write_to_file(keys, values, target_path, language_name):
         key = keys[x]
         value = values[x]
         content = "<string name=\"" + key + "\">" + value + "</string>\n"
-        fo.write(content)
+        key.strip()
+        content_for_ios = "\"" + key + "\" " + "= " + "\"" + value + "\";\n"
+        fo_for_android.write(content)
+        fo_for_ios.write(content_for_ios)
 
-    fo.write("\n")
-    fo.close()
+    fo_for_android.write("\n")
+    fo_for_android.close()
+
+    fo_for_ios.write("\n")
+    fo_for_ios.close()
 
 
 def main():
