@@ -20,6 +20,7 @@ cd 到 start.py 所在文件夹，并将多语言 xls 表格复制到同一文�
 然后检查表格第一行的国家代码，如果 写入 Android 项目的话，表格中国家代码要分别与 res 文件夹下 values-xx 中的 xx 一致，如果是英文，则直接写 en ，对应 res 文件夹下的英文文件夹 values。如果是 iOS 项目，则表格中国家代码要分别与 Localization 下的 xx.lproj 中的 xx 保持一致。
 
 确认代码无误后，Android 在脚本所在文件夹下运行 `python start.py -f xxx/xxx.xls -t xxx/xxx/res -w 1`，其中 xxx/xxx.xls 为多语言表格路径，xxx/xxx/res 为 Android res 文件夹的路径。
+
 iOS 在脚本所在文件夹下运行 `python start.py -f xxx/xxx.xls -t xxx/xxx/Localization -w 0`，其中 xxx/xxx.xls 为多语言表格路径，xxx/xxx/Localization 为 iOS Localization 文件夹的路径。
 
 脚本运行完毕，写入即完成
