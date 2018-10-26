@@ -28,6 +28,3 @@ iOS 在脚本所在文件夹下运行 `python start.py -f xxx/xxx.xls -t xxx/xxx
 脚本运行完毕，写入即完成
 
 备注：对于项目中没有的多语言语种，而表格中有，会新建对应的多语言文件夹与文件
-
-同时，脚本会在脚本所在的文件夹也会生成 **常规使用** 中的 strings.xml 或 iOS 的 Localizable.strings，可以按需取用。
-
