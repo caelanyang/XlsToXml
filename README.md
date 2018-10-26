@@ -11,9 +11,10 @@
 
 ## 2.常规使用
 cd 到 start.py 所在文件夹，并将多语言 xls 表格复制到同一文件夹下。
-在本文件夹下运行  `python start.py -f  xxx.xls -t XXX`  （xxx.xls 为多语言表格名称加后缀，XXX 为 生成的 strings.xml以及 Localizable.strings 所在文件夹（`python start.py -f  xxx.xls -t .`）生成到当前脚本文件夹
+在本文件夹下运行  `python start.py -f  xxx.xls -t XXX`  （xxx.xls 为多语言表格名称加后缀，XXX 为 生成的 strings.xml以及 Localizable.strings 所在文件夹（`python start.py -f  xxx.xls -t .` 表示 生成到当前脚本文件夹）。
+脚本运行完成后悔生成两个文件，Android 的 string.xml 与 iOS 的 Localizable.strings，多语言按照语种分类，都在同一个文件内，手动复制到项目中对应语种的文件内即可。
 
-## 3.直接写入 Android 多语言 strings.xml 或 iOS 的 Localizable.strings
+## 3.直接向项目中写入 Android 多语言 strings.xml 或 iOS 的 Localizable.strings（不需手动复制）
 
 请先完成 **使用前准备**
 
