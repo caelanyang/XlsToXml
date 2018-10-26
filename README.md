@@ -6,7 +6,7 @@
 ## 1.使用前准备
 
 - 安装 Python 3（最新版本是3.65）
-- 安装 两个 Python Package ----pyexcelerator 和 xlrd （命令行：pip install XXX）
+- 安装 Python Package ---- xlrd （命令行：pip install xlrd）
 - 简单处理多语言表格：插入一列至表格的首列，并对对应的 string 命名 id。（相当于提前给字符指定 Android 中的 R.id.... 或者 iOS当中的 key）
 
 ## 2.常规使用
